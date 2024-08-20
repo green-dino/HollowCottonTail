@@ -1,0 +1,12 @@
+<!-- templates/playbook/playbook_result.html -->
+<h1>Playbook Result</h1>
+<p>Playbook Name: {{ playbook_data.play_name }}</p>
+<p>Roles: {{ playbook_data.roles }}</p>
+<p>Blocks: {{ playbook_data.blocks }}</p>
+<p>Tasks: {{ playbook_data.tasks }}</p>
+
+<h2>Graph</h2>
+{{ graph_dot }}
+
+<h2>Interactive Graph</h2>
+<iframe src="{{ interactive_graph_url }}" height="600" width="100%"></iframe>

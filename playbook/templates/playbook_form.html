@@ -1,0 +1,15 @@
+<!-- templates/playbook/playbook_form.html -->
+<h1>Create Playbook</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Generate Playbook</button>
+</form>
+
+{% if errors %}
+    <ul>
+        {% for error in errors %}
+            <li>{{ error }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
