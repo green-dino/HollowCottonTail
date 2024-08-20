@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from .forms import TextInputForm
 import spacy
-#from textblob import TextBlob
+from textblob import TextBlob
 import nltk
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
