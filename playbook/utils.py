@@ -1,4 +1,5 @@
 # playbook/utils.py
+import os 
 import json
 from django.conf import settings
 import graphviz as gv
@@ -45,7 +46,7 @@ class PlaybookUtils:
             filename (str): Name of the file to save the playbook in.
         """
         playbook_data.update({"version": version, "author": author})
-        filepath = settings.MEDIA_ROOT / filename
+        filepath = os.path.join(settings.MEDIA_ROOT, filename)
         try:
             with open(filepath, "w") as file:
                 json.dump(playbook_data, file)
