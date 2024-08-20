@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Text Analysis</title>
+</head>
+<body>
+    <h1>Text Analysis</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Analyze</button>
+    </form>
+
+    {% if analysis_results %}
+        <h2>Analysis Results</h2>
+        <h3>Parts of Speech</h3>
+        <table>
+            <tr>
+                <th>Token</th>
+                <th>POS</th>
+                <th>Dependency</th>
+                <th>Head</th>
+            </tr>
+            {% for token in analysis_results.pos_data %}
+            <tr>
+                <td>{{ token.0 }}</td>
+                <td>{{ token.1 }}</td>
+                <td>{{ token.2 }}</td>
+                <td>{{ token.3 }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <h3>Keywords</h3>
+        <ul>
+            {% for keyword in analysis_results.keywords %}
+            <li>{{ keyword }}</li>
+            {% endfor %}
+        </ul>
+
+        <h3>Sentiment Score</h3>
+        <p>{{ analysis_results.sentiment }}</p>
+
+        <h3>Word Cloud</h3>
+        <img src="data:image/png;base64,{{ analysis_results.word_cloud }}" />
+
+        <h3>Dependency Graph</h3>
+        <img src="data:image/png;base64,{{ analysis_results.dep_graph }}" />
+
+        <h3>Entity Distribution</h3>
+        <img src="data:image/png;base64,{{ analysis_results.entity_dist }}" />
+    {% endif %}
+</body>
+</html>

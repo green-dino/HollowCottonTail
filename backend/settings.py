@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "plan.apps.PlanConfig",
     "playbook",
+    "analysis",
 ]
 
 MIDDLEWARE = [
