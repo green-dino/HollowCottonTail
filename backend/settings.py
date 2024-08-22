@@ -37,9 +37,10 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "plan.apps.PlanConfig",
+    #"plan.apps.PlanConfig",
     "playbook",
     "analysis",
+    "plan",
 ]
 
 MIDDLEWARE = [
@@ -69,6 +70,7 @@ TEMPLATES = [
         },
     },
 ]
+LOGIN_REDIRECT_URL = "plan/"
 
 WSGI_APPLICATION = "backend.wsgi.application"
 

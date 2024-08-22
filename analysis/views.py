@@ -12,8 +12,8 @@ import seaborn as sns
 from io import BytesIO
 import base64
 
-nltk.download('punkt')
-nltk.download('stopwords')
+#nltk.download('punkt')
+#nltk.download('stopwords')
 
 class TextAnalysisApp:
     def __init__(self):

@@ -1,9 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render , HttpResponse
+from .models import Post
 
-from django.shortcuts import render
-from .models import PlanItem
+def index(request):
+    return HttpResponse("hi")
+
+def post_list(reqest):
+    return render(request=reqest, template_name="post_list.html", context={"items":Post.objects.all()})
 
 
-def plan_list(request):
-    items = PlanItem.objects.all()
-    return render(request, "plan/plan_list.html", {"items": items})

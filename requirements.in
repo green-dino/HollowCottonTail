@@ -1,0 +1,9 @@
+django
+textblob
+nltk
+wordcloud
+networkx
+seaborn
+graphviz
+pyvis
+spacy
